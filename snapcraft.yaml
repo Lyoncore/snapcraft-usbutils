@@ -1,0 +1,31 @@
+name: demo-usbutils
+version: 0.0.8-6
+summary: Linux USB utilities
+description: |
+  This package contains the lsusb utility for inspecting the devices
+  connected to the USB bus. It shows a graphical representation of the
+  devices that are currently plugged in, showing the topology of the
+  USB bus. It also displays information on each individual device on
+  the bus.
+confinement: strict
+
+apps:
+    lsusb:
+        command: usr/bin/lsusb
+        plugs: [hardware-observe, fwupd, network]
+
+parts:
+    pciutils:
+        plugin: autotools
+        source: https://github.com/gregkh/usbutils.git
+        source-type: git
+        build-packages:
+            - libusb-1.0-0
+            - zlib1g
+        configflags:
+            - --prefix=/usr
+            - --libdir=/usr/lib
+            - --localstatedir=/var/lib
+        snap:
+            - -usr/share/doc
+            - -usr/share/man
