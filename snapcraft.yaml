@@ -15,7 +15,7 @@ apps:
         plugs: [hardware-observe, network]
 
 parts:
-    pciutils:
+    usbutils:
         plugin: autotools
         source: https://github.com/gregkh/usbutils.git
         source-type: git
