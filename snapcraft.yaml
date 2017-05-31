@@ -23,8 +23,10 @@ parts:
         source: https://github.com/gregkh/usbutils.git
         source-type: git
         build-packages:
-            - libusb-1.0-0
-            - zlib1g
+            - libusb-1.0-0-dev
+            - libglib2.0-dev
+            - libudev-dev
+            - zlib1g-dev
         configflags:
             - --prefix=/usr
             - --libdir=/usr/lib
