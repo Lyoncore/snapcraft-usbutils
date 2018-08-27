@@ -1,5 +1,5 @@
 name: demo-usbutils
-version: 0.0.8-8
+version: 0.1.0-0
 summary: Linux USB utilities
 description: |
   This package contains the lsusb utility for inspecting the devices
@@ -13,9 +13,7 @@ grade: stable
 apps:
     lsusb:
         command: usr/bin/lsusb
-        plugs: [hardware-observe, network]
-        aliases:
-            - lsusb
+        plugs: [hardware-observe]
 
 parts:
     usbutils:
